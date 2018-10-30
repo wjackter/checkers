@@ -1,7 +1,7 @@
 /* global document window console */
 
 function setupPieceDragging(piece) {
-  console.log(piece);
+  console.log(`setting up drag for ${piece}`);
   piece.addEventListener('dragstart', (ev) => {
     console.log(`start dragging: ${ev.target.id}`);
   });
