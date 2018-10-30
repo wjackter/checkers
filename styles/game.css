@@ -41,6 +41,11 @@ span.piece {
     margin-top: 5px;
 }
 
+span.piece:hover {
+    box-shadow: 0 0 2px 2px #fff;
+    cursor: move;
+}
+
 span.piece.red {
     background-color: red;
 }
