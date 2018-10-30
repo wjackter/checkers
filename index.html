@@ -3,39 +3,30 @@
   <head>
     <meta charset="UTF-8">
     <title>Checkers</title>
-    <link href='styles/game.css' rel='stylesheet'>
+    <link href="styles/game.css" rel="stylesheet">
+    <script type="text/javascript" src="scripts/game.js"></script>
   </head>
   <body>
     <div id="game-board">
       <table>
         <tr>
           <td></td>
-          <td><span class="piece red"></span></td>
+          <td><span class="piece red" draggable="true" id="red-1"></span></td>
           <td></td>
-          <td><span class="piece red"></span></td>
+          <td><span class="piece red" draggable="true" id="red-2"></span></td>
           <td></td>
-          <td><span class="piece red"></span></td>
+          <td><span class="piece red" draggable="true" id="red-3"></span></td>
           <td></td>
-          <td><span class="piece red"></span></td>
+          <td><span class="piece red" draggable="true" id="red-4"></span></td>
         </tr>
         <tr>
-          <td><span class="piece red"></span></td>
+          <td><span class="piece red" draggable="true" id="red-5"></span></td>
           <td></td>
-          <td><span class="piece red"></span></td>
+          <td><span class="piece red" draggable="true" id="red-6"></span></td>
           <td></td>
-          <td><span class="piece red"></span></td>
+          <td><span class="piece red" draggable="true" id="red-7"></span></td>
           <td></td>
-          <td><span class="piece red"></span></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td><span class="piece red" draggable="true" id="red-8"></span></td>
           <td></td>
         </tr>
         <tr>
@@ -69,24 +60,34 @@
           <td></td>
         </tr>
         <tr>
-          <td><span class="piece black"></span></td>
           <td></td>
-          <td><span class="piece black"></span></td>
           <td></td>
-          <td><span class="piece black"></span></td>
           <td></td>
-          <td><span class="piece black"></span></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="piece black" draggable="true" id="black-1"></span></td>
+          <td></td>
+          <td><span class="piece black" draggable="true" id="black-2"></span></td>
+          <td></td>
+          <td><span class="piece black" draggable="true" id="black-3"></span></td>
+          <td></td>
+          <td><span class="piece black" draggable="true" id="black-4"></span></td>
           <td></td>
         </tr>
         <tr>
           <td></td>
-          <td><span class="piece black"></span></td>
+          <td><span class="piece black" draggable="true" id="black-5"></span></td>
           <td></td>
-          <td><span class="piece black"></span></td>
+          <td><span class="piece black" draggable="true" id="black-6"></span></td>
           <td></td>
-          <td><span class="piece black"></span></td>
+          <td><span class="piece black" draggable="true" id="black-7"></span></td>
           <td></td>
-          <td><span class="piece black"></span></td>
+          <td><span class="piece black" draggable="true" id="black-8"></span></td>
         </tr>
 
       </table>
