@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#game-board {
+    margin-top: 20px;
+}
+
+#game-board table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#game-board table {
+    padding: 0;
+    margin: 0 auto;
+    border: 2px solid #181818;
+}
+
+#game-board table tr td {
+    width: 60px;
+    height: 60px;
+}
+
+#game-board table tr:nth-child(2n) td:nth-child(2n+1), #game-board table tr:nth-child(2n+1) td:nth-child(2n) {
+    background: #F55454;
+}
+
+#game-board table tr:nth-child(2n) td:nth-child(2n), #game-board table tr:nth-child(2n+1) td:nth-child(2n+1) {
+    background: #747070;
+}
+
+span.piece {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 8px;
+    margin-top: 5px;
+}
+
+span.piece.red {
+    background-color: red;
+}
+
+span.piece.black {
+    background-color: #3E404A;
+}
