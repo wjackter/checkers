@@ -7,87 +7,91 @@
     <script type="text/javascript" src="scripts/game.js"></script>
   </head>
   <body>
+    <div class="drag-pieces">
+      <div class="piece red" id="red-0"></div>
+      <div class="piece black" id="black-0"></div>
+    </div>
     <div id="game-board">
       <table>
         <tr>
-          <td></td>
-          <td><span class="piece red" draggable="true" id="red-1"></span></td>
-          <td></td>
-          <td><span class="piece red" draggable="true" id="red-2"></span></td>
-          <td></td>
-          <td><span class="piece red" draggable="true" id="red-3"></span></td>
-          <td></td>
-          <td><span class="piece red" draggable="true" id="red-4"></span></td>
+          <td class="square black"></td>
+          <td class="square red"><div class="piece red" draggable="true" id="red-1"></div></td>
+          <td class="square black"></td>
+          <td class="square red"><div class="piece red" draggable="true" id="red-2"></div></td>
+          <td class="square black"></td>
+          <td class="square red"><div class="piece red" draggable="true" id="red-3"></div></td>
+          <td class="square black"></td>
+          <td class="square red"><div class="piece red" draggable="true" id="red-4"></div></td>
         </tr>
         <tr>
-          <td><span class="piece red" draggable="true" id="red-5"></span></td>
-          <td></td>
-          <td><span class="piece red" draggable="true" id="red-6"></span></td>
-          <td></td>
-          <td><span class="piece red" draggable="true" id="red-7"></span></td>
-          <td></td>
-          <td><span class="piece red" draggable="true" id="red-8"></span></td>
-          <td></td>
+          <td class="square red"><div class="piece red" draggable="true" id="red-5"></div></td>
+          <td class="square black"></td>
+          <td class="square red"><div class="piece red" draggable="true" id="red-6"></div></td>
+          <td class="square black"></td>
+          <td class="square red"><div class="piece red" draggable="true" id="red-7"></div></td>
+          <td class="square black"></td>
+          <td class="square red"><div class="piece red" draggable="true" id="red-8"></div></td>
+          <td class="square black"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
+          <td class="square red"></td>
+          <td class="square black"></td>
         </tr>
         <tr>
-          <td><span class="piece black" draggable="true" id="black-1"></span></td>
-          <td></td>
-          <td><span class="piece black" draggable="true" id="black-2"></span></td>
-          <td></td>
-          <td><span class="piece black" draggable="true" id="black-3"></span></td>
-          <td></td>
-          <td><span class="piece black" draggable="true" id="black-4"></span></td>
-          <td></td>
+          <td class="square black"><div class="piece black" draggable="true" id="black-1"></div></td>
+          <td class="square red"></td>
+          <td class="square black"><div class="piece black" draggable="true" id="black-2"></div></td>
+          <td class="square red"></td>
+          <td class="square black"><div class="piece black" draggable="true" id="black-3"></div></td>
+          <td class="square red"></td>
+          <td class="square black"><div class="piece black" draggable="true" id="black-4"></div></td>
+          <td class="square red"></td>
         </tr>
         <tr>
-          <td></td>
-          <td><span class="piece black" draggable="true" id="black-5"></span></td>
-          <td></td>
-          <td><span class="piece black" draggable="true" id="black-6"></span></td>
-          <td></td>
-          <td><span class="piece black" draggable="true" id="black-7"></span></td>
-          <td></td>
-          <td><span class="piece black" draggable="true" id="black-8"></span></td>
+          <td class="square red"></td>
+          <td class="square black"><div class="piece black" draggable="true" id="black-5"></div></td>
+          <td class="square red"></td>
+          <td class="square black"><div class="piece black" draggable="true" id="black-6"></div></td>
+          <td class="square red"></td>
+          <td class="square black"><div class="piece black" draggable="true" id="black-7"></div></td>
+          <td class="square red"></td>
+          <td class="square black"><div class="piece black" draggable="true" id="black-8"></div></td>
         </tr>
 
       </table>

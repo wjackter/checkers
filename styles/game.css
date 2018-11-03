@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.hide {
+    display: none;
+}
+
 #game-board {
     margin-top: 20px;
 }
@@ -18,20 +22,20 @@
     border: 2px solid #181818;
 }
 
-#game-board table tr td {
+#game-board table tr td.square {
     width: 60px;
     height: 60px;
 }
 
-#game-board table tr:nth-child(2n) td:nth-child(2n+1), #game-board table tr:nth-child(2n+1) td:nth-child(2n) {
+#game-board table tr td.square.red {
     background: #F55454;
 }
 
-#game-board table tr:nth-child(2n) td:nth-child(2n), #game-board table tr:nth-child(2n+1) td:nth-child(2n+1) {
+#game-board table tr td.square.black {
     background: #747070;
 }
 
-span.piece {
+.piece {
     height: 40px;
     width: 40px;
     border: 1px solid black;
@@ -41,15 +45,20 @@ span.piece {
     margin-top: 5px;
 }
 
-span.piece:hover {
+.piece:hover {
     box-shadow: 0 0 2px 2px #fff;
     cursor: move;
 }
 
-span.piece.red {
+.piece.red {
     background-color: red;
 }
 
-span.piece.black {
+.piece.black {
     background-color: #3E404A;
+}
+
+.drag-pieces {
+    margin-left: -200px;
+    height: 0;
 }
