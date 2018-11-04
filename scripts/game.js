@@ -25,7 +25,7 @@ function setupPieceDragging(board) {
         DRAG.black = true;
       }
 
-      ev.dataTransfer.setData('text/plain', ev.target.id);
+      ev.dataTransfer.setData('text', ev.target.id);
       ev.dataTransfer.dropEffect = 'move';
       ev.dataTransfer.effectAllowed = 'move';
     }
@@ -63,7 +63,14 @@ function setupDropZone(board) {
     ev.preventDefault();
     if (ev.target && ev.target.className.indexOf('square') > -1) {
       document.querySelector(`#${ev.target.id}`).style.outline = '';
+      if ((DRAG.red && ev.target.className.indexOf('red') > -1) || (DRAG.black && ev.target.className.indexOf('black') > -1)) {
+        const piece = document.querySelector(`#${ev.dataTransfer.getData('text')}`);
+        piece.parentNode.removeChild(piece);
+        ev.target.appendChild(piece);
+      }
     }
+    DRAG.black = false;
+    DRAG.red = false;
   });
 }
 
