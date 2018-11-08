@@ -1,11 +1,10 @@
 /* global document window console */
 
-const COLUMNS_ROWS = 8;
 const DRAG = {
   red: false,
   black: false
 };
-const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+const COLUMNS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
 function isValidDrop(ev) {
   // const squareId = document.querySelector(`#${ev.dataTransfer.getData('piece-id')}`).parentNode.id.split('-');
@@ -13,8 +12,8 @@ function isValidDrop(ev) {
   const dropId = ev.target.id.split('-');
 
   if ((DRAG.red && parseInt(startId[1], 10) - 1 === parseInt(dropId[1], 10)) || (DRAG.black && parseInt(startId[1], 10) + 1 === parseInt(dropId[1], 10))) {
-    const startColumn = LETTERS.indexOf(startId[0]);
-    const endColumn = LETTERS.indexOf(dropId[0]);
+    const startColumn = COLUMNS.indexOf(startId[0]);
+    const endColumn = COLUMNS.indexOf(dropId[0]);
     return (startColumn + 1 === endColumn) || (startColumn - 1 === endColumn);
   }
   return false;
@@ -90,9 +89,9 @@ function setupDropZone(board) {
 
 function setupSquareIds(squares) {
   let count = 0;
-  for (let x = COLUMNS_ROWS; x > 0; x -= 1) {
-    for (let q = 0; q < LETTERS.length; q += 1) {
-      squares[count].id = `${LETTERS[q]}-${x}`;
+  for (let x = COLUMNS.length; x > 0; x -= 1) {
+    for (let q = 0; q < COLUMNS.length; q += 1) {
+      squares[count].id = `${COLUMNS[q]}-${x}`;
       count += 1;
     }
   }
