@@ -1,11 +1,24 @@
 /* global document window console */
-/* eslint no-param-reassign: ["error", { "props": false }] */
 
 const COLUMNS_ROWS = 8;
 const DRAG = {
   red: false,
   black: false
 };
+const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
+function isValidDrop(ev) {
+  // const squareId = document.querySelector(`#${ev.dataTransfer.getData('piece-id')}`).parentNode.id.split('-');
+  const startId = ev.dataTransfer.getData('square-id').split('-');
+  const dropId = ev.target.id.split('-');
+
+  if ((DRAG.red && parseInt(startId[1], 10) - 1 === parseInt(dropId[1], 10)) || (DRAG.black && parseInt(startId[1], 10) + 1 === parseInt(dropId[1], 10))) {
+    const startColumn = LETTERS.indexOf(startId[0]);
+    const endColumn = LETTERS.indexOf(dropId[0]);
+    return (startColumn + 1 === endColumn) || (startColumn - 1 === endColumn);
+  }
+  return false;
+}
 
 function setupPieceDragging(board) {
   const RED_DRAG = document.querySelector('#red-0');
@@ -25,7 +38,8 @@ function setupPieceDragging(board) {
         DRAG.black = true;
       }
 
-      ev.dataTransfer.setData('text', ev.target.id);
+      ev.dataTransfer.setData('piece-id', ev.target.id);
+      ev.dataTransfer.setData('square-id', ev.target.parentNode.id);
       ev.dataTransfer.dropEffect = 'move';
       ev.dataTransfer.effectAllowed = 'move';
     }
@@ -63,8 +77,8 @@ function setupDropZone(board) {
     ev.preventDefault();
     if (ev.target && ev.target.className.indexOf('square') > -1) {
       document.querySelector(`#${ev.target.id}`).style.outline = '';
-      if ((DRAG.red && ev.target.className.indexOf('red') > -1) || (DRAG.black && ev.target.className.indexOf('black') > -1)) {
-        const piece = document.querySelector(`#${ev.dataTransfer.getData('text')}`);
+      if (isValidDrop(ev) && ((DRAG.red && ev.target.className.indexOf('red') > -1) || (DRAG.black && ev.target.className.indexOf('black') > -1))) {
+        const piece = document.querySelector(`#${ev.dataTransfer.getData('piece-id')}`);
         piece.parentNode.removeChild(piece);
         ev.target.appendChild(piece);
       }
@@ -75,11 +89,10 @@ function setupDropZone(board) {
 }
 
 function setupSquareIds(squares) {
-  const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
   let count = 0;
   for (let x = COLUMNS_ROWS; x > 0; x -= 1) {
-    for (let q = 0; q < letters.length; q += 1) {
-      squares[count].id = `${letters[q]}-${x}`;
+    for (let q = 0; q < LETTERS.length; q += 1) {
+      squares[count].id = `${LETTERS[q]}-${x}`;
       count += 1;
     }
   }
