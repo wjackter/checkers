@@ -27,12 +27,12 @@
     height: 60px;
 }
 
-#game-board table tr td.square.red {
-    background: #F55454;
+#game-board table tr td.square.light {
+    background: #f58154;
 }
 
-#game-board table tr td.square.black {
-    background: #747070;
+#game-board table tr td.square.dark {
+    background: #1c1035;
 }
 
 .piece {
